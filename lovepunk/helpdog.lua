@@ -86,3 +86,35 @@ end
 function helpdog.map(x, fromMin, fromMax, toMin, toMax)
 	return toMin + ((x - fromMin) / (fromMax - fromMin)) * (toMax - toMin);
 end
+
+function pressing(key)
+	if key == "left" then
+		return love.keyboard.isDown("left") or love.keyboard.isDown("a")
+	end
+	if key == "right" then
+		return love.keyboard.isDown("right") or love.keyboard.isDown("d")
+	end
+	if key == "up" then
+		return love.keyboard.isDown("up") or love.keyboard.isDown("w")
+	end
+	if key == "down" then
+		return love.keyboard.isDown("down") or love.keyboard.isDown("s")
+	end
+
+	--TODO: GOTTA PUT IN A THING TO CONFIGURE THESE AT SOME POINT
+	if key == "jump" then
+		return love.keyboard.isDown("space")
+	end
+
+	if key == "button1" then
+		return love.keyboard.isDown("z")
+	end
+
+	if (key == "button2") then
+		return love.keyboard.isDown("x")
+	end
+end
+
+function aabb(a, ax, ay, b)
+	return ay <= b.y + b.height and ay + a.height > b.y and ax <= b.x + b.height and ax + a.height > b.x
+end

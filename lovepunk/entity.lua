@@ -8,6 +8,7 @@ function Entity.new(x, y, width, height)
 	self.type = "null"
 	self.layer=0
 	self.scene=nil
+	self.visible = true
 	return self
 end
 function Entity:added()
