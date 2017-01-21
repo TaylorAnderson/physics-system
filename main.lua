@@ -1,6 +1,8 @@
 
 scene = nil;
-love.window.setMode(800, 400)
+width=800
+height=400
+love.window.setMode(width, height)
 require("testscene")
 
 function love.load()
